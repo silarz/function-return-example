@@ -4,13 +4,26 @@
   <meta charset="utf-8">
   <title>Function library example</title>
   <style>
+
+    body{
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     input {
       font-size: 2em;
       margin: 10px 1px 0;
     }
+
+    p{
+      font-size: 30px;
+    }
   </style>
 </head>
 <body>
+  <h1>Please enter a number:</h1>
 
   <input class="numberInput" type="text">
   <p></p>
@@ -41,9 +54,11 @@
     input.onchange = function(){
       const num = parseFloat(input.value);
       if (isNaN(num)){
-        para.textContent = 'This is not a number. Please enter a number.'
+        para.textContent = 'This is not a number. Please enter a number.';
+        para.style.color = 'red';        
       } else{
         para.textContent = num + ' squared is ' + squared(num) + '. ' + num + ' cubed is ' + cubed(num) + '. ' + num + ' factorial is ' + factorial(num) + '. ';
+        para.style.color = 'green';
       }
     }
 
